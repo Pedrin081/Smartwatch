@@ -1,4 +1,5 @@
-const imagemselecionada = document.getElementById('imagem-visualizacao');
+const imagemvisualizacao = document.getElementById('imagem-visualizacao');
+const tituloproduto = docuemnt.getElementById('titulo-produto');
 
 const VerdeCipreste = {
     nome: 'Verde-Cipreste',
@@ -26,11 +27,20 @@ const rosaclaro = {
 }
 
 const opcoesCores = [VerdeCipreste, AzulInverno, meianoite, estelar, rosaclaro ]
+const opcoestamanho = ['41mm', '45mm'];
 
 let imagemselecionada = 1;
+let tamanhoselecionado = 1;
 
 function trocarimagem () {
     const idOpcaoSelecionada = document.querySelector('[name="opcao-imagem"]:checked').id;
     imagemselecionada = idOpcaoSelecionada.charAt(0);
-    imagemselecionada.src = "./imagens/opcoes-cores/imagens-azul-inverno/imagem-" + imagemselecionada +  ".jpeg";
+    imagemvisualizacao.src = "./imagens/opcoes-cores/imagens-azul-inverno/imagem-" + imagemselecionada +  ".jpeg";
+}
+
+function trocartamanho () {
+    const idOpcaoSelecionada = document.querySelector('[name="opcao-tamanho"]:checked').id;
+    tamanhoselecionado = idOpcaoSelecionada.charAt(0);
+    tituloproduto.innertext = "Pulseira loop esportiva azul-inverno para caixa de" + opcoestamanho[tamanhoselecionado];
+
 }
